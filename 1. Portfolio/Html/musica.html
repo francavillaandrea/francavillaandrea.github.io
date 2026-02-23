@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musica - Francavilla Andrea</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../Css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Assets/img/Favicon/favicon.ico" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Assets/img/Favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Francavilla Andrea">
+    <link rel="manifest" href="../Assets/img/Favicon/site.webmanifest">
+    <!-- Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="../Js/theme.js"></script>
+    <script defer src="../Js/hover.js"></script>
+    <script defer src="../Js/smoothScroll.js"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-vh-100 d-flex flex-column">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border border-1 rounded-bottom sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-decoration-none" href="#">Francavilla Andrea</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./chisono.html">Me</a>
+                    </li>
+                    <li class="nav-item dropdown" id="hobbyDropdown">
+                        <a class="nav-link dropdown-toggle text-decoration-none focus-ring-0" href="./hobby.html">
+                            Hobby
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-decoration-none focus-ring-0" href="./moto.html">Moto</a>
+                            </li>
+                            <li><a class="dropdown-item active text-decoration-none focus-ring-0"
+                                    href="./musica.html">Musica</a></li>
+                            <li><a class="dropdown-item text-decoration-none focus-ring-0" href="./sport.html">Sport</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-decoration-none focus-ring-0" href="./contact.html">Contatti</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <!-- Theme Switcher -->
+                <div class="mode-switch d-flex gap-1">
+                    <button class="btn btn-outline-secondary btn-sm" id="light">
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary btn-sm" id="dark">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary btn-sm" id="system">
+                        <i class="bi bi-circle-half"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow-1">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <h1 class="text-center mb-5">La Musica nella Mia Vita</h1>                    <div class="card bg-body-tertiary mb-4">
+                        <div class="row g-4 p-4">
+                            <div class="col-md-4">
+                                <img src="../Assets/img/Carti.jpg" class="img-fluid rounded" alt="Playboi Carti"
+                                    style="width: 100%; height: 250px; object-fit: cover; transition: transform .2s;"
+                                    onmouseover="this.style.transform='scale(1.02)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="../Assets/img/sfera.jpg" class="img-fluid rounded" alt="Sfera Ebbasta"
+                                    style="width: 100%; height: 250px; object-fit: cover; transition: transform .2s;"
+                                    onmouseover="this.style.transform='scale(1.02)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="../Assets/img/caparezza.jpg" class="img-fluid rounded" alt="Caparezza"
+                                    style="width: 100%; height: 250px; object-fit: cover; transition: transform .2s;"
+                                    onmouseover="this.style.transform='scale(1.02)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                            </div>
+
+                            <div class="col-md-4">
+                                <img src="../Assets/img/travis.jpg" class="img-fluid rounded" alt="Travis Scott"
+                                    style="width: 100%; height: 250px; object-fit: cover; transition: transform .2s;"
+                                    onmouseover="this.style.transform='scale(1.02)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="../Assets/img/kid yugi.jpg" class="img-fluid rounded" alt="Kid Yugi"
+                                    style="width: 100%; height: 250px; object-fit: cover; transition: transform .2s;"
+                                    onmouseover="this.style.transform='scale(1.02)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="../Assets/img/fabri fibra.jpg" class="img-fluid rounded" alt="Fabri Fibra"
+                                    style="width: 100%; height: 250px; object-fit: cover; transition: transform .2s;"
+                                    onmouseover="this.style.transform='scale(1.02)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title mb-3">Il Mio Rapporto con la Musica</h2>
+                            <p class="card-text mb-4">
+                                La musica è una parte fondamentale della mia routine quotidiana. Senza di essa,
+                                probabilmente non riuscirei
+                                a vivere allo stesso modo, perché rappresenta per me uno strumento capace di rilassarmi,
+                                ma anche di
+                                influenzare profondamente il mio umore. Insieme ad altre passioni, come la moto, la
+                                musica è ciò che
+                                mi fa sentire davvero vivo.
+                            </p>
+                            <p class="card-text mb-4">
+                                Attraverso ciò che ascolto, riesco a esprimere le mie emozioni e a dare voce a quello
+                                che spesso non
+                                riesco a dire a parole. Tra gli artisti che ascolto più frequentemente ci sono Playboi
+                                Carti, Travis Scott,
+                                Chief Keef, King Von e Ken Carson, che rappresentano per me l'essenza di un certo stile
+                                e di un'energia
+                                che mi coinvolge totalmente.
+                            </p>
+                            <p class="card-text mb-4">
+                                Oltre alla scena americana, seguo anche molti artisti della trap italiana, come Sfera
+                                Ebbasta, Artie 5ive,
+                                Shiva e Kid Yugi, che, partendo da contesti difficili o periferici, riescono a                                raccontare attraverso la
+                                musica le realtà da cui provengono. Le loro esperienze personali si riflettono nei
+                                testi, spesso crudi
+                                e diretti, e affrontano tematiche sociali ed esistenziali con cui riesco a entrare in
+                                sintonia.
+                            </p>
+                            <p class="card-text">
+                                Non mancano poi artisti italiani come Caparezza e Fabri Fibra, che, seppur con stili
+                                diversi, hanno avuto
+                                un grande impatto su di me. Caparezza, con i suoi testi ironici e impegnati, mi fa
+                                riflettere e sorridere
+                                allo stesso tempo, mentre Fabri Fibra, con il suo linguaggio diretto e provocatorio, ha
+                                saputo raccontare
+                                realtà spesso nascoste, mantenendo una forte identità nel panorama musicale italiano.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card bg-body-tertiary mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title mb-3">I Miei Generi Preferiti</h2>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>Trap:</strong> <span>Un sottogenere del rap con suoni elettronici</span>
+                                </li>
+                                <li class="mb-2"><strong>Hip-Hop:</strong> <span>Il genere base da cui tutto è partito</span></li>
+                                <li class="mb-2"><strong>Rap:</strong> <span>In tutte le sue forme e sottogeneri</span></li>
+                                <li class="mb-2"><strong>Drill:</strong> <span>Una variante più aggressiva della trap</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card bg-body-tertiary">
+                        <div class="card-body">
+                            <h2 class="card-title mb-3">Le Mie Playlist</h2>
+                            <p class="card-text mb-4">
+                                La musica mi accompagna in ogni momento della giornata. Ho diverse playlist
+                                per ogni occasione: dall'allenamento alla guida, dallo studio al relax.
+                                La musica ha il potere di influenzare il mio umore e di darmi la giusta
+                                energia per affrontare qualsiasi situazione.
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <a href="https://open.spotify.com/user/31hvixinzjvp76gbi7kvise5vdoa?si=f837be01cd124b42"
+                                    target="_blank" class="btn btn-success d-flex align-items-center gap-2">
+                                    <i class="bi bi-spotify fs-5"></i>
+                                    <span>Seguimi su Spotify</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-3 border border-1 rounded-top bg-body-tertiary">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <a href="https://www.instagram.com/andrea.francavilla/"
+                        class="link-body-emphasis text-decoration-none" target="_blank">
+                        <i class="bi bi-instagram fs-5"></i>
+                    </a>
+                </div>                <div class="text-center flex-grow-1 mx-4">
+                    <p class="mb-0">© Author Francavilla Andrea 2024 All Rights Reserved.</p>
+                </div>
+                <div>
+                    <a href="https://github.com/francavillaandrea" class="link-body-emphasis text-decoration-none"
+                        target="_blank">
+                        <i class="bi bi-github fs-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
