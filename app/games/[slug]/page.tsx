@@ -7,6 +7,12 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return games.map((game) => ({ slug: game.slug }));
+}
+
 export default async function GamePlayPage({ params }: Props) {
   const { slug } = await params;
   const gameIndex = games.findIndex((item) => item.slug === slug);
