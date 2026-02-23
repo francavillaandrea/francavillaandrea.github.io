@@ -10,7 +10,7 @@ const ThemeSwitcher = dynamic(
     { ssr: false }
 );
 
-type NavKey = "home" | "me" | "hobby" | "contact";
+type NavKey = "home" | "me" | "hobby" | "games" | "contact";
 type HobbyKey = "moto" | "musica" | "sport";
 
 type SiteLayoutProps = {
