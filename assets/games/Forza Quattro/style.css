@@ -1,0 +1,154 @@
+:root {
+    --rows: 6;
+    --cols: 7;
+    --cell-size: 60px;
+    --player1-color: #ffc107;
+    --player2-color: #dc3545;
+    --board-bg: #0d6efd;
+    --empty-cell-bg: var(--bs-body-bg);
+}
+
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    font-family: "Comic Relief", system-ui;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: fit-content;
+}
+
+h1 {
+    color: var(--bs-body-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+}
+
+.controls-wrapper {
+    flex-wrap: wrap;
+}
+
+.info-box {
+    background-color: var(--bs-tertiary-bg);
+    border: 2px solid var(--bs-border-color);
+    border-radius: 10px;
+    padding: 10px 15px;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-label {
+    font-size: 0.8rem;
+    color: var(--bs-body-color);
+    opacity: 0.7;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.info-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.input-group .form-select {
+    background-color: var(--bs-card-bg);
+    color: var(--bs-body-color);
+    border-color: var(--bs-border-color);
+}
+
+.input-group .input-group-text {
+    background-color: var(--bs-tertiary-bg);
+    color: var(--bs-body-color);
+    border-color: var(--bs-border-color);
+}
+
+#game-container {
+    position: relative;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(var(--cols), var(--cell-size));
+    grid-template-rows: repeat(var(--rows), var(--cell-size));
+    gap: 5px;
+    background-color: var(--board-bg);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 50%;
+    background-color: var(--empty-cell-bg);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.3);
+}
+
+.cell.player1 {
+    background-color: var(--player1-color);
+    animation: drop 0.4s ease-out;
+}
+
+.cell.player2 {
+    background-color: var(--player2-color);
+    animation: drop 0.4s ease-out;
+}
+
+.cell.winning-cell {
+    animation: pulse 0.4s ease-out;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.3), 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes drop {
+    from {
+        transform: translateY(-300px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.winning-line {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 10px;
+    border-radius: 5px;
+    transform-origin: left center;
+    animation: grow 0.5s ease-out;
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+    }
+    to {
+        /* width is set dynamically */
+    }
+}
+
+.modal-content {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    border: 1px solid var(--bs-border-color);
+}

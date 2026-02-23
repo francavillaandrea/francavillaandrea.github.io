@@ -1,0 +1,184 @@
+:root {
+    --grid-rows: 8;
+    --grid-cols: 8;
+    --cell-size: 35px;
+}
+
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    font-family: "Comic Relief", system-ui;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: fit-content; /* Adjust based on grid size */
+}
+
+h1 {
+    color: var(--bs-body-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+}
+
+.lead {
+    color: var(--bs-body-color);
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.controls-wrapper {
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.info-box {
+    background-color: var(--bs-tertiary-bg);
+    border: 2px solid var(--bs-border-color);
+    border-radius: 10px;
+    padding: 10px 15px;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-label {
+    font-size: 0.8rem;
+    color: var(--bs-body-color);
+    opacity: 0.7;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.info-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.input-group .form-select {
+    background-color: var(--bs-card-bg);
+    color: var(--bs-body-color);
+    border-color: var(--bs-border-color);
+    max-width: 180px;
+}
+
+.input-group .input-group-text {
+    background-color: var(--bs-tertiary-bg);
+    color: var(--bs-body-color);
+    border-color: var(--bs-border-color);
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-cols), var(--cell-size));
+    grid-template-rows: repeat(var(--grid-rows), var(--cell-size));
+    gap: 2px;
+    background-color: var(--bs-secondary-bg);
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 2px solid var(--bs-border-color);
+    border-radius: 4px;
+    background-color: var(--bs-tertiary-bg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.1s ease-out;
+    user-select: none;
+    position: relative;
+    color: var(--bs-body-color);
+    font-family: 'Courier New', monospace;
+}
+
+.cell:hover:not(.revealed):not(.flagged) {
+    background-color: var(--bs-secondary-bg);
+    transform: scale(1.05);
+}
+
+.cell.revealed {
+    background-color: var(--bs-card-bg);
+    cursor: default;
+    border-color: var(--bs-border-color);
+    transform: none;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.cell.flagged {
+    background-color: var(--bs-warning);
+    color: #fff;
+    cursor: context-menu;
+}
+
+.cell.flagged::before {
+    content: "\F389"; /* Bootstrap icon for flag */
+    font-family: "bootstrap-icons";
+    font-size: 1.5rem;
+}
+
+.cell.bomb {
+    background-color: var(--bs-danger);
+    color: white;
+}
+
+.cell.bomb::before {
+    content: "\F2E9"; /* Bootstrap icon for bomb */
+    font-family: "bootstrap-icons";
+    font-size: 1.5rem;
+}
+
+/* Colors for numbers */
+.cell[data-count="1"] { color: #0d6efd; }
+.cell[data-count="2"] { color: #198754; }
+.cell[data-count="3"] { color: #dc3545; }
+.cell[data-count="4"] { color: #0d6efd; }
+.cell[data-count="5"] { color: #dc3545; }
+.cell[data-count="6"] { color: #0dcaf0; }
+.cell[data-count="7"] { color: var(--bs-body-color); }
+.cell[data-count="8"] { color: var(--bs-body-color); opacity: 0.7; }
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-info.text-white {
+    color: #fff !important; /* Ensure white text for the info button */
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 1rem;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--bs-border-color);
+}
