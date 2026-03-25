@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Pages - Francavilla Andrea</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    [data-bs-theme="dark"] {
+      --bs-body-bg: #0a0a0a;
+      --bs-body-color: #ffffff;
+      --bs-tertiary-bg: #0a0a0a !important;
+      --bs-secondary-bg: #0a0a0a;
+      --bs-border-color: #ffffff !important;
+      --bs-card-bg: #0a0a0a;
+      --bs-navbar-bg: #0a0a0a;
+    }
+    [data-bs-theme="light"] {
+      --bs-body-bg: #FFFEEF;
+      --bs-body-color: #000000;
+      --bs-tertiary-bg: #FFFEEF !important;
+      --bs-secondary-bg: #FFFEEF;
+      --bs-border-color: #000000 !important;
+      --bs-card-bg: #FFFEEF;
+      --bs-navbar-bg: #FFFEEF;
+    }
+
+    body {
+      font-family: "Comic Relief", system-ui;
+      font-weight: 400;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main { flex: 1; }
+    html { scrollbar-width: none; }
+
+    .navbar, footer {
+      background-color: var(--bs-navbar-bg) !important;
+    }
+    .navbar.bg-body-tertiary,
+    footer.bg-body-tertiary {
+      background-color: var(--bs-tertiary-bg) !important;
+    }
+
+    .nav-link.active {
+      color: #ffffff !important;
+      background-color: #dc3545 !important;
+      border-radius: 0.375rem;
+    }
+    .nav-link:hover {
+      color: #dc3545 !important;
+      background-color: transparent !important;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0%; height: 4px;
+      background: #dc3545;
+      transition: width 0.1s ease-out;
+      z-index: 9999;
+    }
+
+    .project-card {
+      border: 1px solid var(--bs-border-color);
+      border-radius: 1rem;
+      background-color: var(--bs-card-bg);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(220, 53, 69, 0.18);
+      border-color: #dc3545 !important;
+    }
+
+    .tech-badge {
+      font-size: 0.72rem;
+      padding: 0.25em 0.6em;
+      border-radius: 0.375rem;
+      background-color: rgba(220, 53, 69, 0.12);
+      color: #dc3545;
+      border: 1px solid rgba(220, 53, 69, 0.3);
+      font-weight: 700;
+    }
+
+    .floating { animation: floating 3s ease-in-out infinite; }
+    @keyframes floating {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+  </style>
+</head>
+
+<body class="min-vh-100 d-flex flex-column">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border border-1 rounded-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand text-decoration-none" href="#">Francavilla Andrea</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">GitHub Pages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://francavillaandrea.github.io" target="_blank">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/francavillaandrea" target="_blank">GitHub</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <div class="mode-switch d-flex gap-1">
+          <button class="btn btn-outline-secondary btn-sm" id="btnLight"><i class="bi bi-sun-fill"></i></button>
+          <button class="btn btn-outline-secondary btn-sm" id="btnDark"><i class="bi bi-moon-fill"></i></button>
+          <button class="btn btn-outline-secondary btn-sm" id="btnSystem"><i class="bi bi-circle-half"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="scroll-progress" id="scrollBar"></div>
+
+  <!-- Main -->
+  <main class="flex-grow-1">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-9">
+
+          <!-- Hero -->
+          <div class="text-center mb-5">
+            <i class="bi bi-github display-1 floating mb-3 d-block"></i>
+            <h1 class="display-5 fw-bold">I Miei Progetti</h1>
+            <p class="text-secondary mt-2">Tutti i siti disponibili tramite GitHub Pages</p>
+          </div>
+
+          <!-- In evidenza -->
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-pin-angle-fill text-danger"></i>
+            <span class="section-label text-secondary">In evidenza</span>
+          </div>
+
+          <div class="row g-4 mb-5">
+
+            <!-- Card 1 -->
+            <div class="col-12 col-md-6">
+              <div class="project-card p-4 h-100 d-flex flex-column">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <span style="font-size:2.4rem;">🌐</span>
+                  <div>
+                    <h5 class="mb-0 fw-bold">Portfolio Personale</h5>
+                    <small class="text-secondary">francavillaandrea.github.io</small>
+                  </div>
+                </div>
+                <p class="flex-grow-1 text-secondary mb-3">
+                  Il mio sito portfolio — chi sono, hobby, musica, sport e contatti.
+                </p>
+                <div class="d-flex flex-wrap gap-1 mb-3">
+                  <span class="tech-badge">HTML</span>
+                  <span class="tech-badge">CSS</span>
+                  <span class="tech-badge">Bootstrap 5</span>
+                  <span class="tech-badge">JS</span>
+                </div>
+                <a href="https://francavillaandrea.github.io" target="_blank"
+                   class="btn btn-danger d-flex align-items-center gap-2 justify-content-center">
+                  <i class="bi bi-box-arrow-up-right"></i> Visita il sito
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 2: placeholder -->
+            <div class="col-12 col-md-6">
+              <div class="project-card p-4 h-100 d-flex flex-column" style="border-style:dashed; opacity:.6;">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <span style="font-size:2.4rem;">🚧</span>
+                  <div>
+                    <h5 class="mb-0 fw-bold">Prossimo Progetto</h5>
+                    <small class="text-secondary">In arrivo...</small>
+                  </div>
+                </div>
+                <p class="flex-grow-1 text-secondary mb-3">
+                  Nuovo progetto in sviluppo. Torna presto per scoprirlo!
+                </p>
+                <div class="d-flex flex-wrap gap-1 mb-3">
+                  <span class="tech-badge">???</span>
+                </div>
+                <a href="https://github.com/francavillaandrea" target="_blank"
+                   class="btn btn-outline-secondary d-flex align-items-center gap-2 justify-content-center">
+                  <i class="bi bi-github"></i> Guarda il profilo
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Tutti i repository -->
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-collection-fill text-danger"></i>
+            <span class="section-label text-secondary">Tutti i repository</span>
+          </div>
+
+          <div class="card bg-body-tertiary mb-4">
+            <div class="card-body p-0">
+              <ul class="list-unstyled mb-0">
+
+                <!-- Repo 1 -->
+                <li class="px-4 py-3 border-bottom d-flex align-items-center justify-content-between flex-wrap gap-2">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-folder2-open text-danger fs-5"></i>
+                    <div>
+                      <a href="https://github.com/francavillaandrea/francavillaandrea.github.io"
+                         target="_blank" class="fw-bold link-body-emphasis text-decoration-none">
+                        francavillaandrea.github.io
+                      </a>
+                      <div class="d-flex gap-1 mt-1 flex-wrap">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JS</span>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="https://francavillaandrea.github.io" target="_blank"
+                     class="btn btn-sm btn-outline-danger d-flex align-items-center gap-1">
+                    <i class="bi bi-box-arrow-up-right"></i> Live
+                  </a>
+                </li>
+
+                <!-- Placeholder -->
+                <li class="px-4 py-3 d-flex align-items-center justify-content-between flex-wrap gap-2" style="opacity:.45;">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-folder2 text-secondary fs-5"></i>
+                    <div>
+                      <span class="fw-bold">Altri repository in arrivo...</span>
+                      <div class="d-flex gap-1 mt-1">
+                        <span class="tech-badge">soon™</span>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="https://github.com/francavillaandrea" target="_blank"
+                     class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-1">
+                    <i class="bi bi-github"></i> GitHub
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+          <!-- Link profilo -->
+          <div class="card bg-body-tertiary">
+            <div class="card-body">
+              <h2 class="card-title mb-3">Il mio profilo GitHub</h2>
+              <p class="card-text text-secondary mb-4">
+                Vuoi vedere tutti i miei repository, contribuzioni e attività?
+                Visita direttamente il mio profilo.
+              </p>
+              <a href="https://github.com/francavillaandrea" target="_blank"
+                 class="btn btn-danger d-inline-flex align-items-center gap-2">
+                <i class="bi bi-github fs-5"></i> Vai al profilo
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-3 border border-1 rounded-top bg-body-tertiary">
+    <div class="container-fluid px-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <a href="https://www.instagram.com/andrea.francavilla/"
+             class="link-body-emphasis text-decoration-none" target="_blank">
+            <i class="bi bi-instagram fs-5"></i>
+          </a>
+        </div>
+        <div class="text-center flex-grow-1 mx-4">
+          <p class="mb-0">© Author Francavilla Andrea 2024 All Rights Reserved.</p>
+        </div>
+        <div>
+          <a href="https://github.com/francavillaandrea"
+             class="link-body-emphasis text-decoration-none" target="_blank">
+            <i class="bi bi-github fs-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme switcher
+    const root = document.documentElement;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    function applyTheme(mode) {
+      root.setAttribute('data-bs-theme',
+        mode === 'system' ? (prefersDark.matches ? 'dark' : 'light') : mode);
+      localStorage.setItem('theme', mode);
+    }
+    applyTheme(localStorage.getItem('theme') || 'dark');
+    document.getElementById('btnLight').addEventListener('click',  () => applyTheme('light'));
+    document.getElementById('btnDark').addEventListener('click',   () => applyTheme('dark'));
+    document.getElementById('btnSystem').addEventListener('click', () => applyTheme('system'));
+    prefersDark.addEventListener('change', () => {
+      if (localStorage.getItem('theme') === 'system') applyTheme('system');
+    });
+
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      document.getElementById('scrollBar').style.width =
+        (total > 0 ? (window.scrollY / total) * 100 : 0) + '%';
+    });
+  </script>
+</body>
+</html>
